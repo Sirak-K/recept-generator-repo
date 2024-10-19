@@ -9,7 +9,6 @@ public class Ingrediens {
         this.ingrediensMängd = ingrediensMängd;
     }
 
-    // Getters och setters
     public String getIngrediensNamn() {
         return ingrediensNamn;
     }

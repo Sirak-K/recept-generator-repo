@@ -7,14 +7,12 @@ public class Recept {
     private List<String> ingredienser;
     private String instruktioner;
 
-    // Korrekt konstruktor som tar in titel, ingredienser och instruktioner
     public Recept(String receptTitel, List<String> ingredienser, String instruktioner) {
         this.receptTitel = receptTitel;
         this.ingredienser = ingredienser;
         this.instruktioner = instruktioner;
     }
 
-    // Getters och setters
     public String getReceptTitel() {
         return receptTitel;
     }

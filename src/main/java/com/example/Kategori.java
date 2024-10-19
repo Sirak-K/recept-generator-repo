@@ -7,7 +7,6 @@ public class Kategori {
         this.kategoriNamn = kategoriNamn;
     }
 
-    // Getters och setters
     public String getNamn() {
         return kategoriNamn;
     }

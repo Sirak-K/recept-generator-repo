@@ -10,8 +10,6 @@ public class ReceptManager<T> {
     private List<T> receptLista = new ArrayList<>();
 
     // Lägg till ett recept i listan med validering
-    // @TODO: Lägg till validering för att säkerställa att receptet inte är null
-
     public void läggTillRecept(T recept) {
         if (recept != null && ((Recept) recept).getReceptTitel() != null
                 && !((Recept) recept).getReceptTitel().isEmpty()) {
@@ -22,8 +20,6 @@ public class ReceptManager<T> {
         }
     }
 
-    // @TODO: Skapa en bättre metod för att sortera recepten i listan
-    // * kanske efter kategori eller alfabetisk ordning
     // Visa alla recept i listan
     public void visaAllaRecept() {
         if (receptLista.isEmpty()) {
@@ -60,7 +56,6 @@ public class ReceptManager<T> {
 
     // Filhantering: Spara recept till fil
     public void sparaReceptTillFil(String filnamn) {
-        // @TODO: Implementera bättre felhantering här för att fånga IOExceptions
         StringBuilder data = new StringBuilder();
         for (T ettRecept : receptLista) {
             data.append(ettRecept.toString()).append("\n");
@@ -78,8 +73,6 @@ public class ReceptManager<T> {
         try {
             List<String> rader = Files.readAllLines(Paths.get(filnamn));
             for (String rad : rader) {
-                // Här kan du implementera logik för att omvandla varje rad till ett
-                // Recept-objekt
                 System.out.println("Läst rad: " + rad);
             }
         } catch (IOException e) {
