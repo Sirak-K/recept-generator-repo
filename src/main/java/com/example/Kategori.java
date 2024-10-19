@@ -20,3 +20,22 @@ public class Kategori {
         return kategoriNamn;
     }
 }
+
+// Underklasser för olika kategorier
+class Frukost extends Kategori {
+    public Frukost() {
+        super("Frukost");
+    }
+}
+
+class Lunch extends Kategori {
+    public Lunch() {
+        super("Lunch");
+    }
+}
+
+class Middag extends Kategori {
+    public Middag() {
+        super("Middag");
+    }
+}

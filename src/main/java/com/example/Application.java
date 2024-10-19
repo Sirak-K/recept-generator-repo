@@ -1,9 +1,8 @@
 package com.example;
 
-import java.util.List;
 import java.util.Scanner;
+import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Application {
     public static void main(String[] args) {
@@ -19,10 +18,15 @@ public class Application {
             System.out.println("3. Ta bort ett recept");
             System.out.println("4. Spara recept till fil");
             System.out.println("5. Läs recept från fil");
-            System.out.println("6. Avsluta");
+            System.out.println("6. Ta bort recept från fil");
+            System.out.println("7. (Hjälp) Visa exempel");
+            System.out.println("8. Avsluta");
 
             int val = scanner.nextInt();
-            scanner.nextLine(); // Rensa inmatningsbufferten
+            scanner.nextLine(); // Rensa inmatningsbufferten efter nextInt()
+
+            // Utskrift av vilket val som gjorts
+            System.out.println("Du valde: " + val);
 
             switch (val) {
                 case 1:
@@ -43,6 +47,14 @@ public class Application {
                     receptManager.läsReceptFrånFil("recept.txt");
                     break;
                 case 6:
+                    System.out.println("Ange titeln på receptet du vill ta bort från filen:");
+                    String receptAttTaBortFrånFil = scanner.nextLine();
+                    receptManager.taBortReceptFrånFil("recept.txt", receptAttTaBortFrånFil);
+                    break;
+                case 7:
+                    visaExempelRecept();
+                    break;
+                case 8:
                     körProgram = false;
                     break;
                 default:
@@ -76,5 +88,24 @@ public class Application {
 
         Recept recept = new Recept(titel, ingredienser, instruktioner);
         receptManager.läggTillRecept(recept);
+    }
+
+    // Ny metod för att visa exempelmaträtter per kategori
+    public static void visaExempelRecept() {
+        System.out.println("Exempel på maträtter för Frukost:");
+        System.out.println("1. Ägg och bacon");
+        System.out.println("2. Pannkakor med sylt");
+        System.out.println("3. Smoothie med bär");
+
+        System.out.println("\nExempel på maträtter för Lunch:");
+        System.out.println("1. Kycklingsallad");
+        System.out.println("2. Spaghetti med köttfärssås");
+        System.out.println("3. Falafelwrap");
+
+        System.out.println("\nExempel på maträtter för Middag:");
+        System.out.println("1. Grilled lax med sparris");
+        System.out.println("2. Biff med potatisgratäng");
+        System.out.println("3. Tacos med grönsaker");
+        System.out.println();
     }
 }
